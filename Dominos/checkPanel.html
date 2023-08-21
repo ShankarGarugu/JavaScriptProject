@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{background-color: skyblue;height: 100px;width: 100px;display: flex; justify-content: center;align-items: center;
+            margin: 10px 10px 10px 10px;
+        }
+       #re {
+        display: flex;
+            background-color: red;
+            flex-wrap:wrap;
+            justify-content:space-around;
+            align-items:center;
+            width: 325px;
+            height: 325px;
+
+        }.XYZ{
+            height: 130px;
+            width: 180px;
+            border-radius: 25px ;
+            background-color: grey;
+        }
+            #base{
+                height: 400px;
+                width: 550px; 
+                background-image: linear-gradient(45deg,rgb(255, 3, 3,0.7),black);
+                display: flex;
+                flex-wrap:wrap;
+                justify-content:space-around; 
+                align-items:center;
+            }
+    
+    </style>
+</head>
+<body>
+    <div id="re" >
+        <div class="a">1</div>
+        <div class="a">2</div>
+        <div class="a">3</div>
+        <div class="a">4</div>
+        <div class="a">5</div>
+        <div class="a">6</div>
+        <div class="a">7</div>
+        <div class="a">8</div>
+        <div class="a">9</div>
+    </div>
+
+</div>
+<br><br><div id="pad"><div id="base">
+ <BR>
+     <DIV class="XYZ" ><pre><b></b></pre></DIV>
+     <DIV class="XYZ" ><pre><b></b></pre></DIV>
+     <DIV class="XYZ" ><b></b></DIV>
+     <DIV class="XYZ" ><b></b></DIV>
+     <DIV class="XYZ"><b></b></DIV>
+     <DIV class="XYZ"><b></b></DIV>
+     <DIV class="XYZ"><b></b></DIV>
+     <DIV class="XYZ"><b></b></DIV>
+     <DIV class="XYZ"><b></b></DIV>
+     
+     <img src="./checked.png" class="fff" >
+     <img src="./checked.png" class="fff" >
+     <img src="./checked.png" class="fff" >
+     <img src="./checked.png" class="fff" >
+
+ </div></div>
+</div>
+<div style="height: 300px;width: 800px;">
+<i class="fa-light fa-print" style="color: #eb0f25;"></i>
+     <i class="fa-thin fa-circle-check fa-beat" style="background-color: black;font-size: 100px;"></i></div>
+<script>
+
+        var vegItems=["Margherita pizza","Farmhouse pizza","Corn cheese pizza","Mashroom pizza","Onion Pizza","Crisp Capsicum & Fresh Tomato Pizza","Jalapeno & Red Paprika Pizza","Paneer Special Pizza","Veggie Paradise Pizza"]
+        var vegItemsPrice=[199,249,249,299,249,299,249,299,249]
+        var nonVegItems=["Chicken pizza","Chicken cheese pizza","Pepperoni pizza","Double chicken cheese pizza","Jerked Chicken Pizza","Meat Lovers Pizza","Gamberi Pizza","Pepper Barbecue Chicken pizza","Peri-Peri Chicken"]
+        var nonVegItemsPrice=[199,249,289,299,289,299,289,299,289]
+        var billHeader=["S.No.","Item-Name","N.Price","Qty.","Value"]
+        var addedItem=["Margherita pizza","Farmhouse pizza","Corn cheese pizza","Chicken pizza","Chicken cheese pizza","Onion Pizza"]
+        var sNo=[1,2,3,4,5,6,7,8,9,10]
+        var utPrice=[]
+        var sumValue=[]
+        var checkoutItems=[sNo,addedItem,utPrice,sumValue]    
+    
+        function checkVegItems() {
+            for (let i = 0; i < addedItem.length; i++) {
+                for (let j = 0; j < vegItems.length; j++) {
+                    if(addedItem[i]==vegItems[j]){
+                        sumValue.push(j)
+                        console.log(j);
+                    }    
+                }
+            }
+        }
+        checkVegItems();
+        setPrice();
+        console.log(sumValue);
+        function setPrice() {
+            for (let i = 0; i < sumValue.length; i++) {
+                for(j=0;j<vegItemsPrice.length;j++)
+                if (sumValue[i]=j) {
+                    sumValue[i]=vegItemsPrice[i]
+                }
+            }
+            console.log(sumValue)
+        }
+        console.log(checkVegItems);
+       ckd=document.getElementsByClassName("fff")
+//setTimeout(()=>{document.getElementsByClassName[0].style.display="block"),
+setTimeout(()=>{for (let index = 0; index < ckd.length; index++) {
+    ckd[index].style.display="none"    
+}}, 5000);
+
+
+
+setTimeout(()=>{ckd[i].style.display="block "    
+                                    }, 1000);
+                    setTimeout(()=>{ckd[i].style.display="none"    
+                                    }, 1000);
+
+</script>
+<input id="searchItem">
+<div id="abcd"></div>
+<script>
+    search="hero"
+src=document.getElementById("searchItem").value
+
+if(src.)
+document.getElementById("abcd").innerText=search
+</script>
+</body>
+</html>

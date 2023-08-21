@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dateToday(){
+            var month =new Date(); //months from 1-12
+            month = month.getMonth();
+
+            var day = new Date();
+            var day = day.getUTCDate();
+
+            var year = new Date();
+            var year = year.getUTCFullYear();
+
+            newdate = year + "/" + month + "/" + day;
+            return newdate;
+        }
+        a=dateToday()
+       console.log(a)
+         sessionStorage.setItem("ar-1","1");
+         sessionStorage.setItem("ar-2","2");
+         sessionStorage.setItem("ar-3","6");
+         sessionStorage.setItem("ar-4","3");
+         sessionStorage.setItem("ar-5","7");
+
+       function getQuantity() {
+        let qty=new Array();
+        for (let index = 0; index < qty.length; index++) {
+            abc=sessionStorage.getItem(sessionStorage.key(index));
+            qty[index]=abc;
+            document.write(qty[index]+",");
+        }
+       }getQuantity();
+    </script>
+</body>
+</html>

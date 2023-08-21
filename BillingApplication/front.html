@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino's Pizza</title>
+    <style>
+*{font-family: impact, Helvetica, sans-serif;font-style: italic;font-size: large;letter-spacing: unset;}
+#pad{
+    border-radius: 15px; background-color:rgba(255,255,255);height: 500px;width: 80%;
+    display:flex;justify-content: center;
+    flex-wrap: wrap;align-items: center;
+    
+}.menus{
+    height: 50px; width:300px; background-color:white; border-radius: 25px 0px 0px 25px;position: relative; left: 10%; display: flex; align-items: center; align-content:center;cursor: pointer;
+}span{
+    height: 100%;width: 100%;display: flex;align-items: center;align-content:center; position: relative;left: 50px;}
+.iconn{position: relative;left: 30px;height: 40px;mix-blend-mode:darken;}
+input{height: 50px;width: 350px;border-radius: 50px;padding-left: 15px;padding-right: 15px;font-size: larger;border: none;box-shadow: 0px 10px 25px crimson;}
+#home{
+    float: left; height: 650px; width: 63%;position: relative;top: 30px; left: 80px;border-radius: 0px 25px 25px 0px; display: flex; align-content: center;flex-direction: column;align-items: center;background-color: aquamarine;
+}#base{
+    height: 400px;width: 550px;
+    display:flex;justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#back,#next{
+    height: 30px;width:100px ;border-radius: 60px;border: none;box-shadow: 10px 0px 25px teal ;background-color: grey;
+}#bottomButtons{
+    display:flex;justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}#header{display:flex;justify-content: center;
+    align-items: center;}
+    a:active{color: black;}
+    a:hover{cursor: pointer;}
+    a:visited{color: black;}
+    a{text-decoration: none;}
+    #active{background-color: aquamarine;}
+    #addItem{
+        height: 50px;
+        width: 120px;
+        background-color: teal;
+        border-radius: 12px;
+        position: relative;
+        left: 60px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    </style>
+</head>
+<body>
+  <!--  <div id="displayPg" onclick="minimize()" style="height: 740px; width: 1200px;border-radius: 25px; background-image: url(./dmnosBg.jpeg);background-size: 100%;position: absolute;top:0px;left: 150px;z-index: 5;background-repeat: no-repeat;">
+        <h1 id="front" style="position: absolute;bottom: 5px;right: 150px;color: white;text-shadow: 0px 0px 12px  black;">
+            Click Here to enter
+        </h1>
+    </div>  -->
+
+    <div style="height: 720px ;width: 1200px;background-color: grey; position: absolute;top: 20px; left: 150px;">
+
+    <div style="float: left; height: 650px; width: 25%; background-color: rgb(0,0,0,0.5); position: relative;top: 30px; left: 80px;border-radius: 25px 0px 0px 25px;display: flex;align-items:center;flex-wrap: wrap; align-content: space-evenly;">
+
+        
+        <div class="menus" id="active">
+            <img class="iconn" src="../Dominos/HOME.png">
+            <span>HOME</span>
+        </div>
+        <br>
+        <a href="./menu.html">
+        <div class="menus" onclick="addVegMenu()">
+            <img class="iconn" src="../Dominos/Veg icon.png">
+            <span>Veg Menu</span>
+        </div>
+        </a>
+        <br>
+        <a href="./nonMenu.html">
+            <div class="menus" onclick="addNonVegMenu()">
+                <img class="iconn" src="../Dominos/non veglogo.png">
+                <span>Non-Veg Menu</span>
+            </div>
+        </a>
+        <br>
+        <a href="./checkout.html">
+            <div class="menus">
+                <img class="iconn" src="../Dominos/check.png">
+                <span>Checkout</span>
+            </div>
+        </a>
+        <a href="./UpdateMenu.html">
+            <div id="addItem">Update Menu
+            </div>
+        </a>
+         
+        </div><div id="home">
+        <br><br>
+        <div id="header" style="border-radius: 15px; background-color: rgba(255,255,255);height: 50px;width: 80%;"><h2 id="hdrTxt"><CENTER style="font-size: 30PX;">HOME</CENTER></h2></div>
+           <br><br>
+           <div id="pad">
+            <div id="base">
+                <input id="oName" type="text" placeholder="Enter Operator Name" style="background-color: white;">
+                <input id="cName" type="text" placeholder="Enter Costumer Name" style="background-color: white;">
+                <input id="mNo" type="tel" placeholder="Enter Costumer Phone No." style="background-color: white;">
+                <input id="address" type="text" placeholder="Enter Costumer Address" style="background-color: white;">
+                <DIV id="bottomButtons" style="width: 550PX;"><br>
+                    <button id="back">BACK</button><div style="height: 10px;width: 100px;"></div>
+                    <a href="./menu.html"><button id="next" onclick="storeToLocal()" >NEXT</button></a>
+                    <br>
+                </DIV>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        var oName=document.getElementById("oName")
+        var cName=document.getElementById("cName")
+        var mNo=document.getElementById("mNo")
+        var address=document.getElementById("address")
+        function storeToLocal(){
+            let a=cName.value;
+            let b=oName.value;
+            let c=mNo.value;
+            let d=address.value;
+            localStorage.setItem("CustName",a);
+            localStorage.setItem("OperatorName",b);
+            localStorage.setItem("Mobile No",c);
+            localStorage.setItem("address",d)
+        }
+        paraElementCreation=()=>{
+            const para = document.createElement("p");
+            para.innerText = a+b+c;
+            document.body.appendChild(para);
+        }
+
+        var nonVegItemsPrice=[199,249,289,299,289,299,289,299,289]
+        addNonVegMenuPrice=()=>{
+            for (let index = 0; index < nonVegItems.length; index++) {
+                const element = nonVegItems[index];
+                const element1=nonVegItemsPrice[index];
+                localStorage.setItem(element,element1)
+            }
+        }
+        var vegItemsPrice=[199,249,249,299,249,299,249,299,249]
+        addVegMenuPrice=()=>{
+            for (let index = 0; index < vegItems.length; index++) {
+                const element = vegItems[index];
+                const element1=vegItemsPrice[index];
+                localStorage.setItem(element,element1)
+            }
+        }
+        var vegItems=["Margherita pizza","Farmhouse pizza","Corn cheese pizza","Mushroom pizza","Onion Pizza","Crisp Capsicum","Jalapeno","Paneer Pizza","Paradise Pizza"]
+        addVegMenu=()=>{
+            for (let index = 0; index < vegItems.length; index++) {
+                const element = vegItems[index];
+                let sNo=index+1;
+                localStorage.setItem("veg-"+sNo,element)
+            }
+            addVegMenuPrice();
+        }
+        var nonVegItems=["Chicken pizza","Chicken cheese","Pepperoni pizza","Double chicken","Jerked Pizza","Meat Lovers Pizza","Gamberi Pizza","BBQ Chicken","Peri-Peri Chicken"]
+        addNonVegMenu=()=>{
+            for (let index = 0; index < nonVegItems.length; index++) {
+                const element = nonVegItems[index];
+                let sNo=index+1
+                localStorage.setItem("non-"+sNo,element)
+            }
+            addNonVegMenuPrice();
+        }
+        aaa=document.getElementById("cBx")
+        function disableOperator(){
+            oName.style.display="disabled"
+        }
+        function back() {
+            window.history.back();
+        }
+        
+
+    </script>
+</body>
+</html>

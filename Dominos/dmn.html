@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino's Pizza</title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="./dmn.css">
+</head>
+<body onclick="searchMenu()">
+    <div id="displayPg" onclick="minimize()" style="height: 740px; width: 1200px;border-radius: 25px; background-image: url(./dmnosBg.jpeg);background-size: 100%;position: absolute;top:0px;left: 150px;z-index: 5;background-repeat: no-repeat;">
+        <h1 id="front" style="position: absolute;bottom: 5px;right: 150px;color: white;text-shadow: 0px 0px 12px  black;">
+            Click Here to enter
+        </h1>
+    </div>
+
+    <div style="height: 720px ;width: 1200px;background-image: radial-gradient(cyan,rgb(188, 7, 22),white); position: absolute;top: 20px; left: 150px;">
+
+    <div style="float: left; height: 650px; width: 25%; background-color: rgb(0,0,0,0.5); position: relative;top: 30px; left: 80px;border-radius: 25px 0px 0px 25px;display: flex;align-items:center;flex-wrap: wrap; align-content: space-evenly;">
+
+        <br>
+        <div class="menus" onclick="mainMenuPg()">
+            <img class="iconn" src="./HOME.png">
+            <span>HOME</span>
+        </div>
+        <br>
+        <div class="menus" onclick="vegMenu()">
+            <img class="iconn" src="./Veg icon.png">
+            <span>Veg Menu</span>
+        </div>
+        <br><div class="menus" onclick="nVegMenu()">
+            <img class="iconn" src="./non veglogo.png">
+            <span>Non-Veg Menu</span>
+        </div>
+        <br>
+        <div class="menus" onclick="checkout()">
+            <img class="iconn" src="./check.png">
+            <span>Checkout</span>
+        </div>
+         
+        </div><div id="home" style="float: left; height: 650px; width: 63%; background-color:rgb(138, 206, 206);position: relative;top: 30px; left: 80px;border-radius: 0px 25px 25px 0px; display: flex; align-content: center;flex-direction: column;align-items: center;">
+        <br><br>
+        <div id="header" style="border-radius: 15px; background-color: rgba(255,255,255);height: 50px;width: 80%;"><h2 id="hdrTxt"></h2></div>
+           <br><br>
+           <div id="pad"><input id="search" on placeholder=" PLEASE SEARCH THE PRODUCT NAME HERE" oninput="searchBar()">
+            <div id="base" style="height: 400px;width: 550px;display:flex;flex-wrap:wrap;justify-content:space-evenly; align-items:center;margin: 30px 30px 30px 30px;">
+            <DIV class="XYZ" >
+                <DIV class="names">
+                    <b class="bold"></b>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                </DIV><center><input id="oName" placeholder="Enter Operator Name" style="background-color: white;"></center>
+                <div class="add">
+                    <strong>+Add</strong>
+                    <img class="checked" src="./checked.png">
+                </div>
+            </DIV>
+
+            <DIV class="XYZ" >
+                <DIV class="names">
+                    <b class="bold"></b>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                </DIV></center><input id="cName" placeholder="Enter Costumer Name" style="background-color: white;"></center>
+                <div class="add">
+                    <img class="checked" src="./checked.png">
+                    <strong>+Add</strong>
+                </div>
+            </DIV>
+            <DIV class="XYZ" >
+                <DIV class="names">
+                    <b class="bold"></b>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                </DIV><input id="mNo" placeholder="Enter Costumer Phone No." style="background-color: white;">
+                <div class="add">
+                    <img class="checked" src="./checked.png">
+                    <strong>+Add</strong>
+                </div>
+            </DIV>
+            <DIV class="XYZ" >
+                <DIV class="names">
+                    <b class="bold"></b>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <div class="grid"><p class="bd"></p></div>
+                    <a href="../html docs/RESULT.html"><div class="grid"><p class="bd"></p></div></a>
+                </DIV>
+                <div class="add">
+                    <img class="checked" src="./checked.png">
+                    <strong>+Add</strong>
+                </div>
+            </DIV>
+
+                <DIV class="XYZ" >
+                    <DIV class="names">
+                        <b></b>
+                    </DIV>
+                    <div class="add">
+                        <img class="checked" src="./checked.png">
+                        <strong>+Add</strong>
+                    </div>
+                </DIV>
+
+                <DIV class="XYZ" >
+                    <DIV class="names">
+                        <b></b>
+                    </DIV>
+                    <div class="add">
+                        <img class="checked" src="./checked.png">
+                        <strong>+Add</strong>
+                    </div>
+                </DIV>
+
+                <DIV class="XYZ" >
+                    <DIV class="names">
+                        <b></b>
+                    </DIV>
+                    <div class="add">
+                        <img class="checked" src="./checked.png">
+                        <strong>+Add</strong>
+                    </div>
+                </DIV><DIV class="XYZ" >
+                    <DIV class="names">
+                        <b></b>
+                    </DIV>
+                    <div class="add">
+                        <img class="checked" src="./checked.png">
+                        <strong>+Add</strong>
+                    </div>
+                </DIV><DIV class="XYZ" >
+                    <DIV class="names">
+                        <b></b>
+                    </DIV>
+                    <div class="add">
+                        <img class="checked" src="./checked.png">
+                        <strong>+Add</strong>
+                    </div>
+                </DIV>
+            </div></div>
+            <DIV id="bottomButtons" style="width: 550PX;"><br>
+                <button id="back" onclick="backButton()">BACK</button>&nbsp;
+                <button id="next" onclick="nextButton()">NEXT</button>
+                <br>
+            </DIV>
+        </div>
+    </div>
+    <div id="searchItem">
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+    </div>
+
+    <script src="./dmn.js">
+       
+    </script>
+</body>
+</html>

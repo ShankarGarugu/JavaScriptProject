@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Menu</title>
+</head>
+<body>
+    <form >
+        <table border="1px">
+            <tr>
+                <td>Product Name</td><td><input type="text" id="ProductName"></td>
+                <td>Product Price</td><td><input type="number" id="ProductPrice"></td>
+            </tr>
+            <tr>
+                <td>Product Picture</td><td><input type="file" id="Picture"></td><td>Type</td><td>veg<input type="radio" name="typ" value="veg">nonn-veg<input type="radio" name="typ" value="nonn-veg"></td>
+            </tr>
+        </table>
+        <button onclick="displayRadioValue()">Submit</button>
+
+        <img id="img-from-local-storage" />
+
+    </form>
+
+    <script>
+    function checkedRadio() {    
+        var typeRadio=document.getElementsByName("typ")
+        let name=document.getElementById("ProductName")
+        let price=document.getElementById("ProductPrice")
+        let pic=document.getElementById("Picture")
+
+    
+        localStorage.setItem("veg")
+        sessionStorage.setItem("ar-2","2");
+        sessionStorage.setItem("ar-3","6");
+        sessionStorage.setItem("ar-4","3");
+        sessionStorage.setItem("ar-5","7");
+        for (let index = 0; index < typeRadio.length; index++) {
+            if (typeRadio[index].checked) {
+                console.log(typeRadio[index].value);
+            }
+        }}
+
+       function getQuantity() {
+        let qty=new Array(sessionStorage.length);
+        for (let index = 0; index < qty.length; index++) {
+            abc=sessionStorage.getItem(sessionStorage.key(index));
+            qty[index]=abc;
+            document.write(qty[index]+",");
+        }
+       }getQuantity() ;
+
+       function displayRadioValue() {
+            var ele = document.getElementsByTagName('input');
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].type == "radio") {
+ 
+                    if (ele[i].checked)
+                       console.log(ele[i])
+                }
+            }
+        }
+    </script>
+    <script>
+        const imageInput = document.getElementById('Picture');
+
+        imageInput.addEventListener('change', event => {
+        // 👇️ Save the image to localStorage
+        const image = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            localStorage.setItem('image', reader.result);
+        });
+
+        if (image) {
+            reader.readAsDataURL(image);
+        }
+
+        // 👇️ Take the image from localStorage
+        // and display it
+        const newImage = document.getElementById(
+            'img-from-local-storage',
+        );
+
+        newImage.src = localStorage.getItem('image');
+        });
+    </script>
+</body>
+</html>

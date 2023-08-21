@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Menu</title>
+    
+    <style>
+        *{font-family: impact, Helvetica, sans-serif;font-style: italic;font-size: large;}
+#pad{
+    border-radius: 15px; background-color:rgba(255,255,255);height: 500px;width: 80%;
+    display:flex;justify-content: center;
+    flex-wrap: wrap;align-items: center;
+    justify-content: center;
+    
+}.menus{
+    height: 50px; width: 300px; background-color:white; border-radius: 25px 0px 0px 25px;position: relative; left: 10%; display: flex; align-items: center; align-content:center;cursor: pointer;
+}span{
+    height: 100%;width: 100%;display: flex;align-items: center;align-content:center; position: relative;left: 50px;}
+.iconn{position: relative;left: 30px;height: 40px;mix-blend-mode:darken;}
+#home{
+    float: left; height: 650px; width: 63%;position: relative;top: 30px; left: 80px;border-radius: 0px 25px 25px 0px; display: flex; align-content: center;flex-direction: column;align-items: center;background-color: aquamarine;
+}#base{
+    height: 400px;width: 550px;
+    display:flex; justify-content: space-evenly;align-items: center;
+    flex-wrap: wrap;overflow-x: scroll;scrollbar-width: 0px;
+}
+#back,#next{
+    height: 30px;width:100px ;border-radius: 60px;border: none;background-color: grey;box-shadow: 0px 0px 25px black;
+}#bottomButtons,#searchHere{height: 50px;
+    display:flex;justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}#searchHere{width: 550px;}input{width: 450px;font-size: large;height: 30px;border-radius: 15px;padding-left: 15px;padding-right: 15px;border: none;box-shadow: 0px 0px 25px black;}
+.title{
+    height: 40px;width: 160px;
+    background-color: aquamarine;
+    border-radius: 10px 0px 10px 10px;
+    display:flex; justify-content: space-evenly;align-items: center;
+
+}#header{display:flex;justify-content: center;
+    align-items: center;}
+    a{text-decoration: none;}
+    a:active{color: black;}
+    a:hover{cursor: pointer;}
+    a:visited{color: black;}
+    #active{background-color: aquamarine;}
+    #search{
+    top: 10px; left: 0px; position: relative;
+    width: 550px;letter-spacing: 1px;
+}#searchItem{
+    width: 550px;
+    position: absolute;
+    top: 245px;
+    left: 660px;
+    z-index:8;
+    border-radius: 15px;
+    overflow: hidden;
+}.searches{
+    height: 22px;
+    width: 550px;
+    background-color:rgba(255,255,255);
+    padding: 3px;
+    padding-left: 20px;
+    display: none;
+}
+.searches:hover{
+    background-color: rgba(0, 0, 0);
+    height: 30px;border: 1px solid red;
+    font-size: 18px;color: white;border-radius: 8px;
+    box-sizing: content-box;
+}.checked{height: 75px;width: 75px;display: none;}
+#billHeader,#billSection,#total{width: 550px;border-radius: 50px;
+
+}table{background-color: blanchedalmond;border-radius: 20px 0px 20px 0px;}
+
+.billHeader{border-radius: 20px 0px 20px 0px;}
+.ItemName{text-align: left;}
+.inpt{background-color: grey;border-radius: 10px 0px 10px 0px;}
+</style>
+
+</head>
+<body >
+  <div style="height: 720px ;width: 1200px;background-color: grey; position: absolute;top: 20px; left: 150px;">
+
+    <div style="float: left; height: 650px; width: 25%; background-color: rgb(0,0,0,0.5); position: relative;top: 30px; left: 80px;border-radius: 25px 0px 0px 25px;display: flex;align-items:center;flex-wrap: wrap; align-content: space-evenly;">
+        <a href="./front.html">
+        <div class="menus">
+            <img class="iconn" src="../Dominos/HOME.png">
+            <span>HOME</span>
+        </div></a>
+        <br>
+        <a href="./menu.html">
+            <div class="menus" >
+                <img class="iconn" src="../Dominos/Veg icon.png">
+                <span>Veg Menu</span>
+            </div>
+        </a>
+        <br><a href="./nonMenu.html">
+            <div class="menus">
+                <img class="iconn" src="../Dominos/non veglogo.png">
+                <span>Non-Veg Menu</span>
+            </div>
+        </a>
+        <br>
+        <div class="menus" id="active">
+            <img class="iconn" src="../Dominos/check.png">
+            <span>Checkout</span>
+        </div>
+         
+        </div>
+        <div id="home">
+            <br><br>
+            <div id="header" style="border-radius: 15px; background-color: rgba(255,255,255);height: 50px;width: 80%;"><h2 id="hdrTxt"><CENTER style="font-size: 30PX;">CHECKOUT</CENTER></h2></div>
+            <br>
+            <div id="pad">
+                <div id="base">
+                    <DIV id="billHeader">
+                        <table id="information" style="width: 500px;position: relative;left:15px;" align="left" cellPadding="2px">
+                        
+                        </table>
+                    </DIV>                    
+                    <DIV id="billSection" style="overflow: hidden;" >
+                        <br>
+                        <table id="billingItems" rules="all" style="width: 500px;position: relative;left:15px;text-align: center;font-weight: lighter;border:solid black 0px;"cellPadding="10px">
+                            <tr style="background-color: crimson;"><td class="billHeader">S.No.</td><td class="billHeader">Item Name</td><td class="billHeader">unit Price</td><td class="billHeader">Qty</td><td class="billHeader">Total Price</td></tr>
+                        </table>
+                        <table id="grandTotal" rules="all" style="width: 500px;position: relative;left:15px;text-align: center;font-weight: lighter;border:solid black 0px;"cellPadding="10px">
+                        </table>
+                        <br>
+                    </DIV>                    
+                    <DIV id="total" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                               
+                </div>
+                <DIV id="bottomButtons" style="width: 550PX;">
+                    <a href="./front.html"><button id="back">BACK</button></a><div style="height: 10px;width: 100px;"></div>
+                    <a href="./nonMenu.html"><button id="next">NEXT</button></a>
+                </DIV>
+            </div>    
+        </div>
+    </div>
+    <script>
+var vegItems=["Margherita pizza","Farmhouse pizza","Corn cheese pizza","Mushroom pizza"," Onion Pizza ","Crisp Capsicum"," Jalapeno ","Paneer Pizza","Paradise Pizza"]
+var vegItemsPrice=[199,249,249,299,249,299,249,299,249]
+var nonVegItems=["Chicken pizza","Chicken cheese","Pepperoni pizza","Double chicken","Jerked Pizza","Meat Lovers Pizza","Gamberi Pizza","BBQ Chicken","Peri-Peri Chicken"]
+var nonVegItemsPrice=[199,249,289,299,289,299,289,299,289]
+var bg=document.getElementsByClassName("XYZ")
+var title=document.getElementsByClassName("title")
+for (let index = 0; index < bg.length; index++) {
+        bg[index].style.backgroundImage="url(../Dominos/vegMenu/vm"+(index+1)+".jpg)";
+        let sNo=index+1;
+        title[index].innerText=localStorage.getItem("veg-"+sNo);
+}
+console.log(localStorage.length);
+</script>
+<script>
+function searchMenu() {
+    for (let index = 0; index < searches.length; index++){
+        if (search.value=="") {
+            searches[index].style.display="none"
+        }
+    }    
+}
+    
+function dateToday(){
+    var month =new Date(); //months from 1-12
+    month = month.getMonth();
+
+    var day = new Date();
+    var day = day.getUTCDate();
+
+    var year = new Date();
+    var year = year.getUTCFullYear();
+
+    newdate = day + "/" + month + "/" +year ;
+    return newdate;
+}
+function timeToday() {
+    var hour=new Date();
+    hour=hour.getHours();
+    var min=new Date();
+    min=min.getMinutes();
+    newTime=hour+":"+min;
+    return newTime;
+}
+var date=dateToday();
+var time=timeToday();
+var itemName=document.getElementsByClassName("itemName");
+console.log(sessionStorage.getItem("ckItem1"));
+let info=[["Coustmer Name:",localStorage.getItem("CustName"),"____","Mobile No.:",localStorage.getItem("Mobile No")],["Date:",date,"____","Address:",localStorage.getItem("address")],["Operator Name:",localStorage.getItem("OperatorName"),"____","Time:",time]]
+var table=document.getElementById("information")
+var table2=document.getElementById("billingItems")
+var table3=document.getElementById("grandTotal")
+sNo=1
+//bilingItems=[sNo++,sessionStorage.getItem("ckItem1"),localStorage.getItem(sessionStorage.getItem("ckItem1")),1,299]
+function addedItems() {
+    for (let index = 0; index < 3; index++) {
+        let row=table.insertRow(index);
+        for (let index2 = 0; index2 < 5; index2++) {
+            row.insertCell(index2).innerText=info[index][index2]      
+        }
+    }
+    //setting up the arrays for table data
+    let prod=[];let serial=[];let unitPrice=[];let totalPrice=[];let quantity=[];
+    for (let index = 0; index < sessionStorage.length; index++) {
+        serial[index]=index+1;
+        let abc=sessionStorage.key(index);
+        console.log(abc);     
+        if(abc.includes("ckItemSearch")) {
+            prod[index]=sessionStorage.getItem(abc)
+            unitPrice[index]=localStorage.getItem(prod[index]) //sessionStorage.getItem("ckItemSearch"+n)
+        }else if(abc.includes("ckItem")) {
+            prod[index]=sessionStorage.getItem(abc)
+            unitPrice[index]=localStorage.getItem(prod[index])//sessionStorage.getItem("ckItem"+n)
+        }else if(abc.includes("ckItemSearchNon")) {
+            prod[index]=sessionStorage.getItem(abc)
+            unitPrice[index]=localStorage.getItem(prod[index])//sessionStorage.getItem("ckItem"+n)
+        }else if(abc.includes("ckItemNon")) {
+            prod[index]=sessionStorage.getItem(abc)
+            unitPrice[index]=localStorage.getItem(prod[index])//sessionStorage.getItem("ckItem"+n)
+        }
+        quantity[index]=2;
+        vvv=quantity[index]+"*"+unitPrice[index]
+        totalPrice[index]=eval(vvv)
+    }
+    console.log(serial);console.log(prod);console.log(unitPrice);console.log(quantity);console.log(totalPrice);
+    //setting data into the table
+    for (let index = 1; index <= sessionStorage.length; index++) {
+        let n=index-1
+        let row=table2.insertRow(index);
+        for (let index2 = 0; index2 < 5; index2++) {
+            let bb=[serial,prod,unitPrice,quantity,totalPrice]
+            row.insertCell(index2).innerText=bb[index2][n]
+        }
+    }let totalGrand=0;
+    totalPrice.forEach(element => {
+        totalGrand=totalGrand+"+"+element
+    });
+    console.log(totalGrand);
+
+    for (let index = 0; index < 1; index++) {
+        let row=table3.insertRow(index);
+        for (let index2 = 0; index2 < 1; index2++) {
+            row.insertCell(0).innerText="Grand Total"   
+            row.insertCell(1).innerText=eval(totalGrand);
+        }
+    }
+}
+addedItems();
+    </script>
+</body>
+</html>

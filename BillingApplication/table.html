@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="tab" border="1px" style="border: 1px black solid;">
+        <tr>
+            <td>abc</td><td>pqr</td>
+        </tr>
+        <tr>
+            <td>xyz</td><td>123</td>
+        </tr>
+    </table>
+     <script>
+        table=document.getElementById("tab")
+        for (let index = 0; index < 3; index++) {
+            let row=table.insertRow(index);
+            for (let index2 = 0; index2 < 10; index2++) {
+                row.insertCell(index2).innerText="hello"+index2        
+            }
+        }
+        console.log(sessionStorage.key(1));
+
+
+
+
+       /* let row=table.insertRow(1);
+        let c1=row.insertCell(0)
+        let c2=row.insertCell(1)
+        c1.innerText="happy"
+        c2.innerText="sad"*/
+     </script>
+</body>
+</html>

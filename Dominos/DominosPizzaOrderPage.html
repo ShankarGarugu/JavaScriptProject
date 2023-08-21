@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bg{
+            background-image: url(./dmnosBg.jpeg);
+            background-size: 1080px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 90%;
+            height: 720px;
+            display: flex;
+            align-items: center;
+            align-content: space-around;
+        }
+        #hilighter{
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 60%;
+            height: 620px;
+            float: left;
+        }
+        img{
+            mix-blend-mode: color-burn;
+            height: 150px;
+        /*    position: absolute;
+            top: 150px;*/
+            left: 200px;
+        }
+        #seq{
+            float: left;
+            width: 300px;
+            height: 500px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <br>
+        <div id="seq"></div>
+        <div id="hilighter">
+            <img src="./1200px-Dominos_pizza_logo.svg.webp"><h1>DominosPizza</h1><hr>
+            <h3>_________MENU__________</h3>
+            <h4 class="itemName">1.Veg menu</h4>
+            <h4 class="itemName">2.Non-veg menu</h4>
+            <h4 class="itemName">0.Exit / Checkout</h4>
+        </div>
+    </div>
+    <script>
+        import java.util.Scanner;
+class DominosPizza01 
+{
+	static int sNo=0;
+	String iName;
+	int qty;
+	int price;
+	static String res="";
+	static int add=1;
+	static int grand=0;
+
+	public static void main(String[] args)//main menu call
+	{
+		menu();
+	}
+	public static void menu()//main menu
+	{
+		Scanner scan=new Scanner(System.in);
+		DominosPizza01 menu=new DominosPizza01();
+		System.out.println("_________________________DominosPizza_________________________");
+		System.out.println("_________MENU__________");
+		System.out.println("1.Veg menu");
+		System.out.println("2.Non-veg menu");
+		System.out.println("0.Exit / Checkout");
+		System.out.println("_____________________________________________________________");
+		System.out.print("Please Enter The Option:  ");
+		int menuOpt=scan.nextInt();
+		if (menuOpt==1)//option for veg menu
+		{
+			menu.vegMenu();
+		}
+		else if(menuOpt==2)//option for non veg menu
+		{
+			menu.nonVeg();
+		}
+		else if (menuOpt==0)//exit or check out
+		{
+			add=9;
+			bill();
+		}
+		else
+		{
+			System.out.println("Please choose the correct option");menu();
+		}
+	}
+	public void vegMenu()
+	{
+		Scanner scan=new Scanner(System.in);
+		//for veg menu items
+		DominosPizza01 vItem1=new DominosPizza01();
+		System.out.println("_____________________________________________________________");
+		System.out.println("Please select your order");
+		System.out.println("************************");
+		System.out.println("1.Margherita pizza	:249/-");
+		System.out.println("2.Farmhouse pizza	:349/-");
+		System.out.println("3.Corn cheese pizza	:399/-");
+		System.out.println("4.Mashroom pizza	:349/-");
+		System.out.println("0.Main menu");
+		System.out.println("_____________________________________________________________");
+		System.out.print("Please Enter The Option:  ");
+		int opt=scan.nextInt();
+		switch (opt)
+		{
+			case 1:
+				this.iName="Margherita pizza              ";
+				this.price=249;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 2:
+				this.iName="Farmhouse pizza               ";
+				this.price=349;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 3:
+				this.iName="Corn cheese pizza             ";
+				this.price=399;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 4:
+				this.iName="Mashroom pizza                ";
+				this.price=349;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 0:
+				menu();
+				break;
+			default:
+				System.out.println("Please choose between 1 to 4 ");
+				vegMenu();
+		}
+	}
+
+	public void nonVeg()
+	{	
+		Scanner scan=new Scanner(System.in);
+		//for Non-veg menu items
+		DominosPizza01 nItem1=new DominosPizza01();
+		System.out.println("_____________________________________________________________");
+		System.out.println("Please select your order");
+		System.out.println("************************");
+		System.out.println("1.Chicken pizza               :449/-");
+		System.out.println("2.Chicken cheese pizza        :529/-");
+		System.out.println("3.Pepperoni pizza             :429/-");
+		System.out.println("4.Double chicken cheese pizza :549/-");
+		System.out.println("0.Main menu");
+		System.out.println("************************");
+		System.out.println("_____________________________________________________________");
+		System.out.print("Please Enter The Option:  ");
+		int opt=scan.nextInt();
+		switch (opt)
+		{
+			case 1:
+//				this.iName="Chicken pizza                 ";
+//				this.price=249;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,/*iName*/"Chicken pizza                 ",/*price*/249,qty);
+				break;
+			case 2:
+				this.iName="Chicken cheese pizza          ";
+				this.price=449;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 3:
+				this.iName="Pepperoni pizza               ";
+				this.price=529;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 4:
+				this.iName="Double chicken cheese pizza   ";
+				this.price=549;
+				System.out.print("Plz select the Quantity	: ");
+				this.qty=scan.nextInt();
+				sNo++;
+				res=finalMenu(sNo,iName,price,qty);
+				break;
+			case 0:
+				menu();
+				break;
+			default:
+				System.out.println("Please choose between 1 to 4 ");
+				nonVeg();
+		}
+	}
+	
+	public void addMore()
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("_____________________________________________________________");
+		System.out.println("1. Add more");
+		System.out.println("2. checkout");
+		System.out.println("_____________________________________________________________");
+		System.out.print("Please Enter The Option:  ");
+		int sleket=scan.nextInt();
+		switch(sleket)
+		{
+		case 1:
+			menu();
+			break;
+		case 2:
+			add=9;
+			bill();
+			System.out.println("Your order is placed, thank you! visit again");
+			break;
+		default:
+			System.out.println("Please choose the correct option");
+			addMore();
+		}
+	}
+	public String finalMenu(int sNo,String iName,int price,int qty)
+	{
+		while (add!=9)
+		{
+			this.sNo=sNo;
+			this.iName=iName;
+			res= res+orderSum(sNo,iName,qty,price);
+			addMore();
+		}
+		return res;
+	}
+	public String orderSum(int sNo,String iName,int qty,int price)
+	{
+		int amt=qty*price;
+		grand+=amt;
+		String res=sNo+"	"+iName+""+price+"	 "+qty+"	"+amt+"\n";
+		return res;
+	}
+	public static void bill()
+	{
+		System.out.println("_____________________________________________________________");
+		System.out.println();
+		System.out.println("***********************DominosPizza**************************");
+		System.out.println("_____________________________________________________________");
+		System.out.println("S.No.	Item-Name		  N.Price	 Qty.	Value");
+		System.out.println("_____________________________________________________________");
+		System.out.println(res);
+		System.out.println("_____________________________________________________________");
+		System.out.println("GRAND TOTAL						"+grand);
+		System.out.println("_____________________________________________________________");
+	}
+}
+
+    </script>
+</body>
+</html>

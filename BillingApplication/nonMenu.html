@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Menu</title>
+    
+    <style>
+        *{font-family: impact, Helvetica, sans-serif;font-style: italic;font-size: large;}
+#pad{
+    border-radius: 15px; background-color:rgba(255,255,255);height: 500px;width: 80%;
+    display:flex;justify-content: center;
+    flex-wrap: wrap;align-items: center;
+    justify-content: center;
+    
+}.menus{
+    height: 50px; width: 300px; background-color:white; border-radius: 25px 0px 0px 25px;position: relative; left: 10%; display: flex; align-items: center; align-content:center;cursor: pointer;
+}span{
+    height: 100%;width: 100%;display: flex;align-items: center;align-content:center; position: relative;left: 50px;}
+.iconn{position: relative;left: 30px;height: 40px;mix-blend-mode:darken;}
+#home{
+    float: left; height: 650px; width: 63%;position: relative;top: 30px; left: 80px;border-radius: 0px 25px 25px 0px; display: flex; align-content: center;flex-direction: column;align-items: center;background-color: aquamarine;
+}#base{
+    height: 400px;width: 550px;
+    display:flex; justify-content: space-evenly;align-items: center;
+    flex-wrap: wrap;overflow-x: scroll;scrollbar-width: 0px;
+}
+#back,#next{
+    height: 30px;width:100px ;border-radius: 60px;border: none;background-color: grey;box-shadow: 0px 0px 25px black;
+}#bottomButtons,#searchHere{height: 50px;
+    display:flex;justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}#searchHere{width: 550px;}input{width: 450px;font-size: large;height: 30px;border-radius: 15px;padding-left: 15px;padding-right: 15px;border: none;box-shadow: 0px 0px 25px black;}
+.XYZ{cursor: pointer;height: 110px;width: 160px;box-shadow: 0px 0px 10px black;border-radius: 10px 0px 10px 0px ;background-repeat: no-repeat;background-size: 160px 110px;background-color: white;position: relative;top: 15px;
+}.title{
+    height: 40px;width: 160px;
+    background-color: aquamarine;
+    border-radius: 10px 0px 10px 10px;
+    display:flex; justify-content: space-evenly;align-items: center;
+
+}#header{display:flex;justify-content: center;
+    align-items: center;}
+    a{text-decoration: none;}
+    a:active{color: black;}
+    a:hover{cursor: pointer;}
+    a:visited{color: black;}
+    #active{background-color: aquamarine;}
+    #search{
+    top: 10px; left: 0px; position: relative;
+    width: 550px;letter-spacing: 1px;
+}#searchItem{
+    width: 550px;
+    position: absolute;
+    top: 245px;
+    left: 660px;
+    z-index:8;
+    border-radius: 15px;
+    overflow: hidden;
+}.searches{
+    height: 18px;
+    width: 550px;
+    background-color:rgba(255,255,255);
+    padding: 3px;
+    padding-left: 20px;
+    display: none;
+}
+.searches:hover{
+    background-color: rgba(0, 0, 0);
+    height: 30px;border: 1px solid red;
+    font-size: 18px;color: white;border-radius: 8px;
+    box-sizing: content-box;
+}.checked{height: 75px;width: 75px;display: none;}
+
+
+
+    </style>
+
+</head>
+<body onclick="searchMenu()">
+  <div style="height: 720px ;width: 1200px;background-color: grey; position: absolute;top: 20px; left: 150px;">
+
+    <div style="float: left; height: 650px; width: 25%; background-color: rgb(0,0,0,0.5); position: relative;top: 30px; left: 80px;border-radius: 25px 0px 0px 25px;display: flex;align-items:center;flex-wrap: wrap; align-content: space-evenly;">
+        <a href="./front.html">
+        <div class="menus">
+            <img class="iconn" src="../Dominos/HOME.png">
+            <span>HOME</span>
+        </div></a>
+        <br>
+        <a href="./menu.html">
+            <div class="menus" >
+                <img class="iconn" src="../Dominos/Veg icon.png">
+                <span>Veg Menu</span>
+            </div>
+        </a>
+        <br><div class="menus" id="active">
+            <img class="iconn" src="../Dominos/non veglogo.png">
+            <span>Non-Veg Menu</span>
+        </div>
+        <br>
+        <a href="./checkout.html">
+            <div class="menus">
+                <img class="iconn" src="../Dominos/check.png">
+                <span>Checkout</span>
+            </div>
+        </a>
+         
+        </div>
+        <div id="home">
+            <br><br>
+            <div id="header" style="border-radius: 15px; background-color: rgba(255,255,255);height: 50px;width: 80%;"><h2 id="hdrTxt"><CENTER style="font-size: 30PX;">Non-Veg Menu</CENTER></h2></div>
+            <br>
+            <div id="pad">
+                <div id="searchHere"><input id="search" oninput="searchBar()" placeholder="SEARCH HERE........."></div>
+                <div id="base">
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                        <input><input><input>
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>                    
+                    <DIV class="XYZ" >
+                        <DIV class="title"></DIV>
+                        <img class="checked" src="../Dominos/checked.png">
+                    </DIV>
+                                     
+                </div>
+                <DIV id="bottomButtons" style="width: 550PX;">
+                    <button id="back" onclick="back()">BACK</button><div style="height: 10px;width: 100px;"></div>
+                    <a href="./checkout.html"><button id="next">NEXT</button></a>
+                </DIV>
+            </div>
+        
+            
+        </div>
+    </div>
+    <div id="searchItem">
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+        <div class="searches">.</div>
+    </div>
+
+    <script>
+var vegItems=["Margherita pizza","Farmhouse pizza","Corn cheese pizza","Mushroom pizza","Onion Pizza","Crisp Capsicum","Jalapeno","Paneer Pizza","Paradise Pizza"]
+var vegItemsPrice=[199,249,249,299,249,299,249,299,249]
+var nonVegItems=["Chicken pizza","Chicken cheese","Pepperoni pizza","Double chicken","Jerked Pizza","Meat Lovers Pizza","Gamberi Pizza","BBQ Chicken","Peri-Peri Chicken"]
+var nonVegItemsPrice=[199,249,289,299,289,299,289,299,289]
+var bg=document.getElementsByClassName("XYZ")
+var title=document.getElementsByClassName("title")
+for (let index = 0; index < bg.length; index++) {"D:\shankar\web\Dominos\nonVegMenu"
+        bg[index].style.backgroundImage="url(../Dominos/nonVegMenu/nvm"+(index+1)+".jpg)";
+        let sNo=index+1;
+        title[index].innerText=localStorage.getItem("non-"+sNo);
+}
+console.log(localStorage.length);
+</script>
+<script>
+    search=document.getElementById("search")
+    var addedItem=[]
+    var checkoutItems=[0,addedItem,"",1,1]
+    searches=document.getElementsByClassName("searches")
+    search.value
+    searchTab=document.getElementById("searchItem")
+
+    function searchMenu() {
+        for (let index = 0; index < searches.length; index++){
+            if (search.value=="") {
+                searches[index].style.display="none"
+            }
+        }
+    }
+    function searchBar() {
+        c=0;
+        for (let index = 0; index < searches.length; index++){
+            searches[index].innerText=""
+        }
+        for (let index = 0; index < vegItems.length; index++){
+            if((vegItems[index].toUpperCase()).includes((search.value).toUpperCase())) {
+                searches[c++].innerText=vegItems[index]
+                console.log(vegItems[index]);
+            }if (searches[index].innerText=="") {
+                searches[index].style.display="none"
+            }else{}
+        }
+        for (let index = 0; index < nonVegItems.length; index++){
+            if((nonVegItems[index].toUpperCase()).includes((search.value).toUpperCase())&&c<10) {
+                searches[c++].innerText=nonVegItems[index]
+                console.log(nonVegItems[index]);
+            }if (searches[index].innerText=="") {
+                searches[index].style.display="none"
+            }else{searches[index].style.display="block"}
+        }
+    }
+    a="sharath"
+    b="kjhvkjf"
+    console.log(a.includes(b));
+    count=1
+    for(let i=0;i<searches.length;i++)
+        {
+            searches[i].addEventListener("click",()=>
+            {
+                if (!(checkoutItems[1].includes(searches[i].innerText))) {
+                checkoutItems[1]=checkoutItems[1]+searches[i].innerText+"\n"
+                sessionStorage.setItem("ckItemSearchNon"+count++,searches[i].innerText)
+                }
+                //price selection
+                if(vegItems.includes(searches[i].innerText)){
+                    checkoutItems[2]=checkoutItems[2]+(vegItemsPrice[i])+"\n"
+                }else if(nonVegItems.includes(searches[i].innerText)){
+                    checkoutItems[2]=checkoutItems[2]+(nonVegItemsPrice[i])+"\n"
+                }/*
+                //Quantity selection
+                qty=1
+                if (checkoutItems[1].includes(searches[i].innerText)) {
+                    checkoutItems[3]=checkoutItems[3]+qty++ +"\n"
+                }else{
+                checkoutItems[3]=checkoutItems[3]+1+"\n"
+                }*/
+                itm=searches[i].innerText
+                searches[i].innerText="<---Item is Added--->"
+                setTimeout(()=>{
+                    searches[i].innerText=itm
+                },500)   
+            })
+        }
+        ckd=document.getElementsByClassName("checked")
+        count1=1
+
+for(let i=0;i<bg.length;i++)
+    {
+        bg[i].addEventListener("click",()=>
+        {
+            if (!(checkoutItems[1].includes(title[i].innerText))) {
+                sessionStorage.setItem("ckItemNon"+count1++,title[i].innerText)
+            }
+            //price selection
+            if(nonVegItems.includes(title[i].innerText)){
+                checkoutItems[2]=checkoutItems[2]+(vegItemsPrice[i])+"\n"
+            }else if(nonVegItems.includes(title[i].innerText)){
+                checkoutItems[2]=checkoutItems[2]+(nonVegItemsPrice[i])+"\n"
+            }/*
+            //Quantity selection
+            qty=1
+            if (checkoutItems[1].includes(title[i].innerText)){
+                checkoutItems[3]=checkoutItems[3]+qty++ +"\n"
+            }else{
+            checkoutItems[3]=checkoutItems[3]+1+"\n"
+            }*/
+            checkoutItems[1]=checkoutItems[1]+bg[i].innerText+"\n"
+            checkoutItems[0]=checkoutItems[0]+(count++)+"\n"
+            checkoutItems[2]=checkoutItems[2]+(vegItemsPrice[i])+"\n"
+            checkoutItems[3]=checkoutItems[3]+1+"\n"
+            ckd[i].style.display="block"
+            setTimeout(()=>{ckd[i].style.display="none";},1000)
+        })
+    }
+    function back() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
